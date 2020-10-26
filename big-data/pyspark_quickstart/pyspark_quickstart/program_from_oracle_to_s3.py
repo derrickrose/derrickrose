@@ -47,6 +47,7 @@ if __name__ == "__main__":
     all_programs = programs_from_oracle.union(programs_on_s3)
 
 
+
     """ todo union AWS s3 programs with loaded programs """
     """ todo filter/sort/deduplicate programs """
     """ todo save programs to AWS s3 """
