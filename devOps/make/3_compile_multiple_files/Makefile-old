@@ -1,0 +1,13 @@
+CC = gcc
+CFLAGS = -c -Wall
+INCLUDE = -I
+
+calculator:calculator.o my_math.o
+	$(CC) calculator.o my_math.o -o calculator
+calculator.o :calculator.c
+	$(CC) $(CFLAGS) calculator.c $(INCLUDE)./
+my_math.o:my_math.c
+	$(CC) $(CFLAGS)  my_math.c $(INCLUDE)./
+
+clean:
+	rm -rf *o calculator
