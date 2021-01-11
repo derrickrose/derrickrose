@@ -37,14 +37,17 @@ if __name__ == "__main__":
     # TODO logical according to execution_type (full/delta loading) """
 
     # TODO load programs from oracle
-    """ in local it will read a directory instead """
+    """ in local it will read from a directory instead """
     programs_from_oracle = spark_session.read.json("../source/*")
 
     # TODO read programs saved on AWS s3 """
-    """ in local it will read a directory instead"""
+    """ in local it will read from a directory instead"""
     programs_on_s3 = spark_session.read.json("../output/*")
 
     all_programs = programs_from_oracle.union(programs_on_s3)
+
+
+
 
 
 

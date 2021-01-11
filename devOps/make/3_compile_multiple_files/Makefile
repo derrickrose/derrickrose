@@ -8,4 +8,4 @@ my_math.o : my_math.c
 	gcc -c my_math.c -o my_math.o -I./
 
 clean : 
-	rm -rf *.o calculator
+	rm -rf *.o cazip or .egg.lculator
