@@ -1,8 +1,8 @@
 COMPILE = gcc
 C_FLAG = -c -Wall
 O_FLAG = -o
-INCLUDE = -I..\header
-SRC = ..\src
+INCLUDE = -I../header
+SRC = ../src
 REMOVE = rm -rf 
 
 calculator : OBJS
@@ -10,7 +10,7 @@ calculator : OBJS
 	
 
 OBJS : 
-	$(COMPILE) $(C_FLAG) $(SRC)\*.c $(INCLUDE)
+	$(COMPILE) $(C_FLAG) $(SRC)/*.c $(INCLUDE)
 
 clean : 
 	$(REMOVE) *.o calculator
