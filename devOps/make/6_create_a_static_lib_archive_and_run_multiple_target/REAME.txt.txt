@@ -1,0 +1,4 @@
+static archive is with *.a extention
+dynamic archive is with *.so extention
+ar is the command to create an archive
+followed by -rc arguments, it will force create and not warn on creating
