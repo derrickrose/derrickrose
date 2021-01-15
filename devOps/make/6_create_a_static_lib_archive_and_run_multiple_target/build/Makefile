@@ -7,6 +7,8 @@ INCLUDE = -I../header
 SRC = ../src
 REMOVE = rm -rf 
 
+## to say what is the default goal
+.DEFAULT_GOAL := all
 
 all : archive clean
 
@@ -19,6 +21,8 @@ OBJS :
 
 clean : 
 	$(REMOVE) *.o calculator
+	
+
 	
 clean_all :
 	$(REMOVE) *.o *.a calculator
