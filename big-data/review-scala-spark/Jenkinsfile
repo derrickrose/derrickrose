@@ -1,0 +1,58 @@
+#!groovy​
+pipeline
+{
+    options
+    {
+        buildDiscarder(logRotator(numToKeepStr: '3'))
+        disableConcurrentBuilds()
+        overrideIndexTriggers(true)
+    }
+    agent any
+    environment
+    {
+        MAVEN = 'datalake-builder-maven:latest'
+        PYTHON_AWS = 'datalake-builder-python:latest'
+        ECRURL = 'https://519622483922.dkr.ecr.eu-west-1.amazonaws.com'
+    }
+    stages {
+        stage("Prepare job dynamic parameters") {
+            steps {
+                script {
+                    envCodes = ['dev': 'dev01', 'rec': 'rec01', 'prod': 'prd01']
+                    env.FULL_JAR_NAME = 'datalake-socle-usage-mytf1-jar-with-dependencies.jar'
+                    env.TARGET_S3 = 's3://'+envCodes[env.TARGET_ENV]+'-datalake/projets/400-socle-usage-mytf1/'+env.FULL_JAR_NAME
+                }
+            }
+        }
+        stage('Build') {
+            steps {
+                script {
+                    docker.withRegistry(ECRURL) {
+                        docker.image(MAVEN).inside() {
+                            sh '''
+                                if [ "$DISABLE_CHECK" = true ]; then
+                                    mvn clean install -Dmaven.test.skip=true
+                                else
+                                    mvn clean install
+                                fi
+                            '''
+                        }
+                    }
+                }
+            }
+        }
+        stage("Copy mytf1 spark application") {
+            steps {
+                script {
+                    docker.withRegistry(ECRURL) {
+                        docker.image(PYTHON_AWS).inside('-e "AWS_CONTAINER_CREDENTIALS_RELATIVE_URI=$AWS_CONTAINER_CREDENTIALS_RELATIVE_URI" -e "AWS_REGION=$AWS_REGION" -e "AWS_DEFAULT_REGION=$AWS_DEFAULT_REGION"') {
+                            sh '''
+                                aws s3 cp target/$FULL_JAR_NAME $TARGET_S3
+                            '''
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
