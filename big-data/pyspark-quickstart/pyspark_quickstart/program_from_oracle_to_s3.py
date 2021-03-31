@@ -1,7 +1,7 @@
 """ Module used to load TV programs from Oracle and save them to AWS s3 """
 from typing import List
 
-import pyspark
+
 import sys
 from pyspark_quickstart.initial_conf import InitialConf
 from pyspark.sql import SparkSession, DataFrame
