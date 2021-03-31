@@ -1,17 +1,12 @@
-from os import system
-#import os then use os.system()
+#!/usr/bin/python3
+# -*- coding: utf-8 -*-
 
-valor = int(input("donnez un nombre "))
 
-"""
-"""
-try: 
-    valor = 1 / valor
+diviseur = input("entrez un numero ")
+
+try:
+    1 / diviseur
 except ZeroDivisionError as error:
-    print("error",error)
-"""
-"""
-
-
-system("pause")
-
+    print("error ", error)
+except TypeError as error:
+    print("error type ", error)

@@ -1,87 +1,90 @@
 #!/usr/bin/python3
-# -*-coding:utf-8 -*
+# -*- coding: utf-8 -*-
 
-
-from os import system
 from random import randrange
 from math import ceil
-	
-
-def getNumero(label,minimum,maximum=-1):
-    numero = -1
-    while numero==-1 or numero <minimum or (maximum>-1 and numero > maximum):
-        courant = input(label)
-        try:
-            courant = int(courant)
-            numero = courant
-        except:
-            print("erreur lors de la convertion")           
-    return numero
 
 
-def getNumeroJoue():
-    return getNumero("entrez le numero jouee ",0,49)
+def recuperer_numero_gagnant():
+    return randrange(1, 100, 1)
 
 
-def getMise(argentTotal):
-    mise = -1
-    while mise == -1 or mise > argentTotal:
-        mise = getNumero("entrez votre mise ",1,1000000)
-    return mise
-
-
-def getArgentInitial():
-    return getNumero("entrez votre argent inital ",1,-1)
-    
-
-def getCouleur(mise):
-    if mise%2 == 0:
+def recuperer_couleur_par_numero(numero):
+    if numero % 2 == 0:
         return "noir"
-    return "rouge"
-
-
-def getGagnant():
-    return randrange(50)
-
-
-def getArgentGagnee(numeroJoue,gagnant,mise):
-    if numeroJoue == gagnant:
-        print("tres bien, vous avez gagne")
-        return mise*2
-    elif getCouleur(numeroJoue) == getCouleur(gagnant):
-        print("pas mal vous avez trouve la couleur gagnante")
-        print("Numero gagnant",gagnant,"- votre choix",numeroJoue,"- couleur gagnant",getCouleur(gagnant),"- votre couleur",getCouleur(numeroJoue))
-        return ceil(mise/2)
     else:
-        print("Dommage, vouz avez perdu!!! ")
-        print("Numero gagnant",gagnant,"- votre choix",numeroJoue,"- couleur gagnant",getCouleur(gagnant),"- votre couleur",getCouleur(numeroJoue))
+        return "rouge"
+
+
+def recuperer_valeurs_gagnant():
+    numero = recuperer_numero_gagnant()
+    return {
+        "numero": numero,
+        "couleur": recuperer_couleur_par_numero(numero)
+    }
+
+
+def calculer_gain(mise, choix, valeurs_gagnant):
+    print("Numero gagnant {0} avec la couleur {1}".format(valeurs_gagnant["numero"], valeurs_gagnant["couleur"]))
+    couleur = recuperer_couleur_par_numero(choix)
+    print("Votre choix {0} votre couleur dans ce cas {1}".format(choix, couleur))
+    if choix == valeurs_gagnant["numero"]:
+        print("Felicitation, vous avez doublé votre mise!!!")
+        return mise
+    elif couleur == valeurs_gagnant["couleur"]:
+        print("Felicitation, on vous rembourse la moitié de votre mise!!!")
+        return -ceil(mise / 2)
+    else:
+        print("Mince alors, vous avez perdu votre mise!!!")
         return -mise
 
 
-def jouer():
-    jouer=True
-    argentTotal = getArgentInitial()
-    while jouer==True:  
-        mise = getMise(argentTotal)
-        numeroJoue = getNumeroJoue()
-        numeroGagnant = getGagnant()
-        argentGagnee = getArgentGagnee(numeroJoue,numeroGagnant ,mise)
-        argentTotal+=argentGagnee
-        if argentTotal == 0:
-            jouer = False 
+def recuperer_valeur(definition):
+    valeur = 0
+    while valeur == 0:
+        try:
+            valeur = int(input(definition))
+        except TypeError as err:
+            print(err)
+        except ValueError as err:
+            print(err)
+    return valeur
+
+
+def vouloir_joueur():
+    vouloir_jouer = None
+    while vouloir_jouer is None:
+        vouloir_jouer = input("Voulez-vous jouer ? o/n ")
+        if vouloir_jouer in ['o', 'O', 'N', 'n']:
+            return vouloir_jouer in ['o', 'O']
         else:
-            reponse = input("Voulez-vous continuer a jouer? o/n ")            
-            if reponse == 'N' or reponse == 'n': 
-                jouer = False
-    print("Aurevoir et a bientot!!!")   
+            print("La valeur entrée est pas bonne!!")
+            vouloir_jouer = None
 
 
-if __name__ == "__main__":
-    jouer()
+def placer_une_mise(argent):
+    mise = -1
+    if argent == 0:
+        return mise
+    while mise == -1:
+        mise = recuperer_valeur("Placez votre mise ")
+        if mise > argent:
+            print("Votre mise {0} ne doit pas dépasser votre argent {1}".format(mise, argent))
+            mise = -1
+    return mise
 
 
-
-
-
-
-
+if __name__ == '__main__':
+    argent = recuperer_valeur("Votre argent de depart ")
+    play = True
+    while play == True:
+        print("---- votre argent est {0} ----".format(argent))
+        mise = placer_une_mise(argent)
+        choix = recuperer_valeur("Jouez votre numero ")
+        gain = calculer_gain(mise, choix, recuperer_valeurs_gagnant())
+        argent = argent + gain
+        if argent == 0:
+            print("Vous avez gaspiller tout votre argent, au-revoir!")
+            play = False
+        else:
+            play = vouloir_joueur()

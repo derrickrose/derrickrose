@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-# -*-coding:utf-8 -*
+# -*- coding: utf-8 -*-
 """ method split """
 string = """je suis une chaine de caracteres"""
 tab = string.split(" ")
