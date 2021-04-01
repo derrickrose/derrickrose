@@ -52,14 +52,7 @@ def recuperer_valeur(definition):
 
 
 def vouloir_joueur():
-    vouloir_jouer = None
-    while vouloir_jouer is None:
-        vouloir_jouer = input("Voulez-vous jouer ? o/n ")
-        if vouloir_jouer in ['o', 'O', 'N', 'n']:
-            return vouloir_jouer in ['o', 'O']
-        else:
-            print("La valeur entrée est pas bonne!!")
-            vouloir_jouer = None
+    return input("Voulez-vous jouer ? o/n ") in ['o', 'O']
 
 
 def placer_une_mise(argent):
@@ -80,11 +73,11 @@ if __name__ == '__main__':
     while play == True:
         print("---- votre argent est {0} ----".format(argent))
         mise = placer_une_mise(argent)
-        choix = recuperer_valeur("Jouez votre numero ")
+        choix = recuperer_valeur("Jouez votre numéro ")
         gain = calculer_gain(mise, choix, recuperer_valeurs_gagnant())
         argent = argent + gain
         if argent == 0:
-            print("Vous avez gaspiller tout votre argent, au-revoir!")
+            print("Vous avez gaspillé tout votre argent, au-revoir!")
             play = False
         else:
             play = vouloir_joueur()
