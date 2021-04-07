@@ -70,7 +70,7 @@ def placer_une_mise(argent):
 if __name__ == '__main__':
     argent = recuperer_valeur("Votre argent de depart ")
     play = True
-    while play == True:
+    while play:
         print("---- votre argent est {0} ----".format(argent))
         mise = placer_une_mise(argent)
         choix = recuperer_valeur("Jouez votre numéro ")

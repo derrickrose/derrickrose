@@ -2,30 +2,21 @@
 # -*- coding: utf-8 -*-
 
 
-def trier(liste:list):
-    liste = [(b,a) for (a,b) in liste]
-    liste.sort(reverse=False)
+""" trier par valeur """
+
+
+# inverser le tuple
+def trier(liste: list):
+    liste = [(a, b) for (b, a) in liste]
+    liste.sort()
     return liste
 
-if __name__ == '__main__':
-    liste = [
-    ("fraises", 18),
-    ("prunes", 51),
-    ("pommes", 4),
-    ("poires", 76),
-    ("melons", 22), ]
-    
-    print(liste)
+
+if __name__ == "__main__":
+    liste = [("fraise", 5), ("baba", 6), ("naranja", 8), ("toronca", 7), ("chips", 1), ("mimi", 2), ("bloos", 0)]
     liste = trier(liste)
-    print(liste)
-    tuples = liste[0]
-    print(tuples)
-    """ parcours de tuple """
-    for el in tuples:
-        print(el)
-
-
-
-
+    for elm in liste:
+        print(elm)
+        print(elm[0])
 
 

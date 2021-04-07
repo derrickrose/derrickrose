@@ -1,41 +1,43 @@
 #!/usr/bin/python3
 # -*- coding: utf-8 -*-
 """ declaration de liste"""
-liste = list()
-print(liste)
-
+ma_liste = list()
 
 """ ajout elmn liste """
-liste.append(2)
-print(liste)
+ma_liste.append(2)
+print(ma_liste)
 
 """ declaration et initialisation liste """
-ma_liste = [1,2]
-print(ma_liste)
+second_list = [1, 2, 3]
+second_list.append(4)
+print(second_list)
 
 """acceder a un element de liste """
-print(ma_liste[1])
+print(second_list[0])
 
 """ inserer une valeur a une liste """
-ma_liste.insert(0,0)
-print(ma_liste)
+second_list.insert(0, 2)
+print(second_list)
 
 """ parcourir une liste """
-for elmt in ma_liste:
-    print(elmt)
+for int in second_list:
+    print(int)
 
-""" parcourir une liste avec un enumartate """
-for elm in enumerate(ma_liste):
+""" parcourir une liste avec enumerate """
+for elm in enumerate(second_list):
     print(elm)
-
-for i,el in enumerate(ma_liste):
-    print("la valeur a la position {} est {}".format(i,el))
+for index, value in enumerate(second_list):
+    print("valeur a la position {} est {} ".format(index, value))
 
 """ supprimer un element de la liste """
-del ma_liste[0]
-print(ma_liste)
+print("avant suppression ==> {} ", second_list)
+del second_list[0]
+print("apres suppression ==> {} ", second_list)
+print(second_list)
 
-""" enlever une valeur das une liste """
-ma_liste.remove(2)
-print(ma_liste)
-
+""" enlever une valeur das une liste (il enleve le premier match) """
+second_list.append(2)
+print("avant enlevement ==> {} ", second_list)
+second_list.remove(2)
+print("apres enlevement ==> {} ", second_list)
+print(second_list)

@@ -11,7 +11,14 @@ class Personne:  # definition de la classe personne
         """Pour l'instant nous allons definir qu'un seul attribut"""
         self.nom = "Dupont"
 
+    def __init__(self, name):
+        """Pour l'instant nous allons definir qu'un seul attribut"""
+        self.nom = name
+
+    def get_nom(self):
+        return self.nom
+
 
 if __name__ == "__main__":
-    personne = Personne()
-    print(personne.nom)
+    mama = Personne("mama")
+    print(mama.get_nom())
