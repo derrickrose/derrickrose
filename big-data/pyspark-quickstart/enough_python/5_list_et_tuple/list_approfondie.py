@@ -27,6 +27,7 @@ def filtre_pair(liste):
 def fun(*lis):
     """présence de étoile donc ici considéré comme liste de variable lis <=> [var1,var2]"""
     """sans étoile c'est considéré comme une seule variable"""
+    """to avoid this, we use also * when calling the method"""
     for index, valor in enumerate(lis):
         for a, b in enumerate(valor):
             print("({},${}) => ${} ".format(index, a, b))
@@ -36,6 +37,7 @@ def fun(*lis):
 if __name__ == '__main__':
     """ on peut aussi passer une liste comme parametres de fonction voyez la diff"""
     fun([1, 2, 3, 4], [1, 2, 3])
+    fun(*["7", "8"])
 
     """ filtrer dans une liste """
     liste = filtre_pair([0, 2, 18, 2, 5, 6])
