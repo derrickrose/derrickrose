@@ -1,0 +1,1 @@
+output d'un module utilisé comme input d'un autre
