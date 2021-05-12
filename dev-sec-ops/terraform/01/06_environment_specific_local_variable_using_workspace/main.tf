@@ -21,7 +21,7 @@ module "ec2_module_1" {
   instance_name = "${local.ec2_instance_name}"
   #to call an output value of a module
   ec2_sg_id = "${module.sg_module.sg_id}"
-  #to call a module
+  #to call and use a module
   source = "./ec2_module"
 }
 
