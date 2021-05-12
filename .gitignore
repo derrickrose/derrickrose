@@ -3,7 +3,9 @@
 *.exe
 *.o
 *.a
-
+.terraform
+*.tfstate
+*.tfstate.d
 #############################
 *.CRC
 *.crc
