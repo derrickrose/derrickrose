@@ -51,7 +51,7 @@ EOF
 }
 
 resource "aws_iam_policy_attachment" "lambda-hello-world-cloudwatch-policy-attach" {
-  depends_on = [
+  depends_on = [aws_iam_role.lambda-hello-world-role,
     aws_iam_policy.lambda-hello-world-cloudwatch-policy]
   name = "lambda-hello-world-cloudwatch-policy-attach"
   policy_arn = "${aws_iam_policy.lambda-hello-world-cloudwatch-policy.arn}"
