@@ -1,5 +1,5 @@
 variable "vpcid" {
-  type = "string"
+  type = string
   default = "vpc-8ffb5bf6"
 }
 

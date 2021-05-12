@@ -7,7 +7,7 @@ variable "ec2_sg_id" {}
 variable "instance_name" {}
 
 resource "aws_instance" "terraform_ec2_instance" {
-  ami = "${var.amiid}"
+  ami = var.amiid
   instance_type = "t2.micro"
   key_name = "dev-ec2-keypair"
   vpc_security_group_ids = [
