@@ -27,8 +27,12 @@ class City:
     def get_name(self):
         return self.name
 
+    # methode de classe
     def get_cities_count(cls):
         return cls.cities_count
+
+    printt = staticmethod(afficher())
+    print("aaa", printt)
 
 
 if __name__ == "__main__":
@@ -38,8 +42,8 @@ if __name__ == "__main__":
     print(city.habitant)
     print(City.cities_count)
     print(city.get_cities_count())
-    print(City.get_cities_count(city))
-
+    print(City.get_cities_count(City))
+    print("afficher ", City.afficher())  # en erreur si on utiliste une instance car une classe est generalement
     city.set_name("Ambilobe")
     print(city.name)
     print(city.get_name())
