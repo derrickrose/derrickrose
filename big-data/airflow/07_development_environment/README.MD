@@ -1,5 +1,7 @@
 # python & virtualenv
-
+* set default python env
+sudo update-alternatives --install /usr/bin/python python /usr/bin/python3.9 0
+  
 
 # docker
 
