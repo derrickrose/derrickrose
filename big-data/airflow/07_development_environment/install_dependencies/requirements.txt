@@ -1,7 +1,0 @@
-SQLAlchemy==1.3.23
-Flask-SQLAlchemy==2.4.4
-setuptools_rust
-psycopg2-binary
-werkzeug
-flask-bcrypt
-apache-airflow[kubernetes, statsd, crypto]==1.10.9
