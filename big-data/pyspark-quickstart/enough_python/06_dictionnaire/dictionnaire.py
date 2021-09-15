@@ -45,6 +45,8 @@ for val in dict1.values():
     print("with values {}".format(val))
 
 """ les dictionnaires peuvent récupérer les paramètres nommés dune fonction """
+
+
 def printa(*param, **param_nomee):
     var = ""
     limit = param_nomee['limit']
@@ -66,6 +68,18 @@ def print_(*param, **param_nomme):
     print(var)
 
 
+def te(a, *b, **c):
+    print(a['ac'])
+    print(b)
+    print(c)
+
+
+def konka(ka, kb, kc):
+    print(ka)
+    print(kb)
+    print(kc)
+
+
 if __name__ == "__main__":
     param = ["1", "2", "3", "4"]
     param_nomee = {'fin': '\n', 'limit': ' '}
@@ -73,3 +87,10 @@ if __name__ == "__main__":
     liste = ['a', 'b']
     dicto = {'delimiteur': ' ', 'fin': '\n'}
     print_(*liste, **dicto)
+    print("---------------")
+    tata = {'ac': 'aa', 'bc': 'bb'}
+
+    tutu = {**tata, 'cc': 'ee'}
+    te(tutu)
+    k = {'ka': 'a', 'kb': 'b', 'kc': 'c'}
+    konka(**k)
