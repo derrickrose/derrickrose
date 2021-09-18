@@ -4,4 +4,7 @@ RUN apt-get update
 
 WORKDIR /app
 
-RUN apt-get moo
+ARG BOLABOLA
+ADD $BOLABOLA /app
+ENTRYPOINT ["ls"]
+CMD ["-l"]
