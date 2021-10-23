@@ -8,9 +8,9 @@ is a Flask app in order to deep dev with docker containerization
 
 ## build with
 
-`              docker build -t hello-flask:latest .                           `
+` docker build -t hello-flask:latest . `
 
 ## run with
 
-`            docker run -d --name hello-flask -p 5000:5000 hello-flask             `
+` docker run -d --name hello-flask -p 5000:5000 hello-flask `
 
