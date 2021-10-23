@@ -1,0 +1,16 @@
+{
+    "repository": {
+        "repositoryArn": "arn:aws:ecr:eu-west-3:893739846413:repository/hello-flask",
+        "registryId": "893739846413",
+        "repositoryName": "hello-flask",
+        "repositoryUri": "893739846413.dkr.ecr.eu-west-3.amazonaws.com/hello-flask",
+        "createdAt": "2021-10-24T00:11:34+02:00",
+        "imageTagMutability": "MUTABLE",
+        "imageScanningConfiguration": {
+            "scanOnPush": false
+        },
+        "encryptionConfiguration": {
+            "encryptionType": "AES256"
+        }
+    }
+}
