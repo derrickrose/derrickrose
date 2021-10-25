@@ -20,9 +20,9 @@
 
 ` docker logs jenkins-blueocean `
 
-## initializionPass under
+## initialAdminPassword under
 
-> /var/jenkins_home/secret/
+> /var/jenkins_home/secrets/
 
 ## for details:
 
