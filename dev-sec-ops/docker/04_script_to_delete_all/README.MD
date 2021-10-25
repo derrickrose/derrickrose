@@ -2,12 +2,12 @@
 
 ## kill containers
 
-`/bin/bash ./delete.sh [containers|c]`
+`/bin/bash ./delete.sh [containers|c] `
 
 ## remove images
 
-`/bin/bash ./delete.sh [images|i]`
+`/bin/bash ./delete.sh [images|i] `
 
 ## remove all
 
-`/bin/bash ./delete.sh`
+`/bin/bash ./delete.sh `
