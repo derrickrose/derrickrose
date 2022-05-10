@@ -7,7 +7,7 @@ class City:
     def calculate_tax():
         return 20
 
-    def afficher():
+    def afficher(self):
         return 0
 
     def set_name(self, name):
