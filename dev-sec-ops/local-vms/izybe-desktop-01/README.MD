@@ -8,6 +8,6 @@ A virtual machine on local which have those following characteristics:
 ## preinstalled app
 
 ## network
-* interface:
+* interface: enp0s8 (reseau intern sur la carte2 virtualbox)
 * ip: [192.168.1.11]
-* mask: 255.255.0.0
+* mask: 255.255.255.0
