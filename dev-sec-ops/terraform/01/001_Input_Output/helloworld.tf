@@ -1,18 +1,18 @@
 provider "aws" {
-	region = "eu-west-1"
-	profile = "review"
+  region  = "eu-west-1"
+  profile = "dev-izybe"
 }
 
 //this is a string variable
 
 variable "firststring" {
-	type = string
-	default = "this is my first string"
+  type    = string
+  default = "this is my first string"
 }
 
 variable "multilinestring" {
-	type = string
-	default = <<EOH
+  type    = string
+  default = <<EOH
 	this is a multiline
 	string
 	newline
@@ -20,52 +20,52 @@ variable "multilinestring" {
 }
 
 output "myfirstoutput" {
-	value = "${var.firststring}"
+  value = "${var.firststring}"
 }
 
 output "mymultilineoutput" {
-	value = "${var.multilinestring}"
+  value = "${var.multilinestring}"
 }
 
 
 //This is my maps example
 
 variable "mapexample" {
-	type = map
-	default = {
-		"useast" = "ami1"
-		"euwest" = "ami2"
-	}
+  type    = map
+  default = {
+    "useast" = "ami1"
+    "euwest" = "ami2"
+  }
 }
 
 output "mapoutput" {
-	value = "${var.mapexample["euwest"]}"
+  value = "${var.mapexample["euwest"]}"
 }
 
 //this is array/lists
 
 variable "mysecuritygrouplist" {
-	type = list
-	default = ["sg1", "sg2", "sg3"]
+  type    = list
+  default = ["sg1", "sg2", "sg3"]
 }
 
 output "sgoutput" {
-	value = "${var.mysecuritygrouplist}"
+  value = "${var.mysecuritygrouplist}"
 }
 
 variable "testbool" {
-	default = false
+  default = false
 }
 
-output "booloutput"{
-	value = "${var.testbool}"
+output "booloutput" {
+  value = "${var.testbool}"
 }
 
 variable "myInputVariable" {
-	type = string
+  type = string
 }
 
 output "myOutputVariable" {
-	sensitive = true
-	value = "${var.myInputVariable}"
+  sensitive = true
+  value     = "${var.myInputVariable}"
 }
