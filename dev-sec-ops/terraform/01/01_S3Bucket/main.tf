@@ -1,20 +1,20 @@
 provider "aws" {
-  region = "eu-west-1"
+  region  = "eu-west-1"
   profile = "review"
 }
 
-resource "aws_s3_bucket" "mybucket" {
+resource "aws_s3_bucket" "my_bucket" {
   bucket = "dev-terraform-test"
-  acl = "private"
-  #region = "eu-west-1"
-  tags = {
-    Environment = "Dev"
+  acl    = "private"
+  tags   = {
+    Environment = "dev"
   }
 }
 
-resource "aws_s3_bucket_object" "myfirstobject" {
-  bucket = aws_s3_bucket.mybucket.id
-  key = "testfile.txt"
-  source = "testfiles/sampleobject.txt"
-  etag = "${md5(file("testfiles/sampleobject.txt"))}"
+resource "aws_s3_bucket_object" "my_first_object" {
+  bucket     = aws_s3_bucket.my_bucket.id
+  depends_on = [aws_s3_bucket.my_bucket]
+  key        = "testfile.txt"
+  source     = "test_files/sample_texte.txt"
+  etag       = "${md5(file("test_files/sample_texte.txt"))}"
 }
