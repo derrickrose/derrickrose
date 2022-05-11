@@ -9,3 +9,5 @@ A virtual machine on local which have those following characteristics:
 * docker
 * powershell
 * awscli
+## other tools installed
+* file server
