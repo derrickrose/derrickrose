@@ -8,7 +8,7 @@ def get_repository_uri(file_path):
         return response_json["repository"]["repositoryUri"]
 
 
-def write_in_file(filename, file_content):
+def write_in_file(filename, file_content):#todo change to environment variable
     with open(f"{filename}".replace("json", "txt"), "w") as repository_uri_file:
         repository_uri_file.write(file_content)
 
