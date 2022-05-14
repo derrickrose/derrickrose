@@ -25,5 +25,5 @@ resource "aws_s3_object" "my_first_object" {
   depends_on = [aws_s3_bucket.dev_izybe_bucket]
   key        = "test_file.txt"
   source     = "test_files/sample_texte.txt"
-  etag       = "${md5(file("test_files/sample_texte.txt"))}"
+  etag       = md5(file("test_files/sample_texte.txt"))
 }

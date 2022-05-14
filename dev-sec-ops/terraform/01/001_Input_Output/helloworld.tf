@@ -20,11 +20,11 @@ variable "multilinestring" {
 }
 
 output "myfirstoutput" {
-  value = "${var.firststring}"
+  value = var.firststring
 }
 
 output "mymultilineoutput" {
-  value = "${var.multilinestring}"
+  value = var.multilinestring
 }
 
 
@@ -39,7 +39,7 @@ variable "mapexample" {
 }
 
 output "mapoutput" {
-  value = "${var.mapexample["euwest"]}"
+  value = var.mapexample["euwest"]
 }
 
 //this is array/lists
@@ -50,7 +50,7 @@ variable "mysecuritygrouplist" {
 }
 
 output "sgoutput" {
-  value = "${var.mysecuritygrouplist}"
+  value = var.mysecuritygrouplist
 }
 
 variable "testbool" {
@@ -58,7 +58,7 @@ variable "testbool" {
 }
 
 output "booloutput" {
-  value = "${var.testbool}"
+  value = var.testbool
 }
 
 variable "myInputVariable" {
@@ -67,5 +67,5 @@ variable "myInputVariable" {
 
 output "myOutputVariable" {
   sensitive = true
-  value     = "${var.myInputVariable}"
+  value     = var.myInputVariable
 }
