@@ -69,3 +69,7 @@ output "myOutputVariable" {
   sensitive = true
   value     = var.myInputVariable
 }
+
+output "test_keypair" {
+  value = file("id_rsa.pub")
+}
