@@ -50,6 +50,6 @@ resource "aws_instance" "dev_ec2_instance" {
   vpc_security_group_ids = [aws_security_group.dev_izybe_sg.id]
 
   tags = {
-    Name = "Terraform Ec2 Instance"
+    Name = "dev-izybe-ec2"
   }
 }
