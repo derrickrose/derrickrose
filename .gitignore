@@ -12,3 +12,4 @@
 *.pyc
 *.backup
 *.hcl
+*.pub
