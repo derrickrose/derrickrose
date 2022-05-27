@@ -27,3 +27,5 @@ module "dev_izybe_ec2" {
   instance_type  = local.dev_izybe_instance_type
 }
 
+
+

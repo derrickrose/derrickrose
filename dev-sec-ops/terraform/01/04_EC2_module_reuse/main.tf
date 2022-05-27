@@ -1,12 +1,12 @@
 locals {
-  dev_izybe_public_key     = file("id_rsa.pub")
-  dev_izybe_ec2_ami_id     = "ami-047bb4163c506cd98"
-  dev_izybe_vpc_id         = "vpc-7cbc4e05"
-  dev_izybe_key_pair_label = "dev_ec2_key_pair"
-  dev_izybe_tag_name       = "dev-izybe-ec2"
-  dev_izybe_tag_name_backup       = "dev-izybe-ec2-backup"
-  dev_izybe_sg_name        = "dev-izybe-sg"
-  dev_izybe_instance_type  = "t2.micro"
+  dev_izybe_public_key      = file("id_rsa.pub")
+  dev_izybe_ec2_ami_id      = "ami-047bb4163c506cd98"
+  dev_izybe_vpc_id          = "vpc-7cbc4e05"
+  dev_izybe_key_pair_label  = "dev-ec2-key-pair"
+  dev_izybe_tag_name        = "dev-izybe-ec2"
+  dev_izybe_tag_name_backup = "dev-izybe-ec2-backup"
+  dev_izybe_sg_name         = "dev-izybe-sg"
+  dev_izybe_instance_type   = "t2.micro"
 
 }
 
