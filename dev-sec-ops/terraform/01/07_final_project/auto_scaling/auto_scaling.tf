@@ -12,7 +12,7 @@ data aws_ami "ubuntu_ami" {
 locals {
   ami_id   = data.aws_ami.ubuntu_ami.id
   max_size = 10
-  min_size = 3
+  min_size = 1
 }
 
 module "shared_vars" {
@@ -41,6 +41,7 @@ resource "aws_autoscaling_group" "autoscaling_group" {
   name                 = "${module.shared_vars.env}-${module.shared_vars.domain}-${module.shared_vars.project}-asg"
   max_size             = local.max_size
   min_size             = local.min_size
+  desired_capacity     = 1
   launch_configuration = aws_launch_configuration.launch_conf.name
   vpc_zone_identifier  = [module.shared_vars.public_subnet_id_a]
   target_group_arns    = [var.target_group_arn]
