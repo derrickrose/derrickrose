@@ -12,7 +12,7 @@ locals {
 }
 
 provider "aws" {
-  profile = "dev-acloud"
+  profile = "cloud_user"
   region  = "us-east-1"
 }
 

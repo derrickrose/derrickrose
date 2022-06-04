@@ -18,7 +18,7 @@ data aws_ami "ubuntu_ami" {
 }
 
 locals {
-  ami_id   = data.aws_ami.ubuntu_ami.id
+  ami_id   = "ami-0d70a59d7191a8079"
   max_size = 10
   min_size = 1
 }

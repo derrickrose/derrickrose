@@ -20,21 +20,21 @@ locals {
   }, local.env  )
 
   public_subnet_id_a = lookup({
-    dev  = data.aws_subnets.default_subnets.ids[0],
-    qa   = data.aws_subnets.default_subnets.ids[0],
-    prod = data.aws_subnets.default_subnets.ids[0],
+    dev  = "subnet-00aeb743a22e033ef",
+    qa   = "subnet-00aeb743a22e033ef",
+    prod = "subnet-00aeb743a22e033ef",
   }, local.env  )
 
   public_subnet_id_b = lookup({
-    dev  = data.aws_subnets.default_subnets.ids[1],
-    qa   = data.aws_subnets.default_subnets.ids[1],
-    prod = data.aws_subnets.default_subnets.ids[1],
+    dev  = "subnet-0260408a6525f8e58",
+    qa   = "subnet-0260408a6525f8e58",
+    prod = "subnet-0260408a6525f8e58",
   }, local.env  )
 
   private_subnet_id = lookup({
-    dev  = data.aws_subnets.default_subnets.ids[2],
-    qa   = data.aws_subnets.default_subnets.ids[2],
-    prod = data.aws_subnets.default_subnets.ids[2],
+    dev  = "subnet-00400929116d25942",
+    qa   = "subnet-00400929116d25942",
+    prod = "subnet-00400929116d25942",
   }, local.env  )
 
   instance_type = lookup({
