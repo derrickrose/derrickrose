@@ -1,3 +1,11 @@
+terraform {
+  required_providers {
+    aws = "4.17.1"
+  }
+  required_version = "1.1.9"
+}
+
+
 locals {
   domain  = "izybe"
   project = "study-tf"
@@ -21,4 +29,5 @@ module "auto_scaling" {
 module "shared_vars" {
   source = "./shared_vars"
 }
+
 

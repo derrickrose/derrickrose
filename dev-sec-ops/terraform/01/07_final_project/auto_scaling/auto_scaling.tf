@@ -42,7 +42,7 @@ resource "aws_autoscaling_group" "autoscaling_group" {
   max_size             = local.max_size
   min_size             = local.min_size
   launch_configuration = aws_launch_configuration.launch_conf.name
-  vpc_zone_identifier  = [module.shared_vars.public_subnet_id_a, module.shared_vars.public_subnet_id_b]
+  vpc_zone_identifier  = [module.shared_vars.public_subnet_id_a]
   target_group_arns    = [var.target_group_arn]
   tag {
     key                 = "name"

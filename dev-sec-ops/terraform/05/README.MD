@@ -1,0 +1,1 @@
+https://www.udemy.com/course/terraform_training/learn/lecture/22444918?start=15#overview
