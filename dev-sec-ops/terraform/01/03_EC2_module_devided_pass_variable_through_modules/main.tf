@@ -1,5 +1,5 @@
 locals {
-  dev_izybe_public_key     = file("id_rsa.pub")
+  dev_izybe_public_key     = file("dev-izybe-ec2-key-pair.ppk")
   dev_izybe_ec2_ami_id     = "ami-047bb4163c506cd98"
   dev_izybe_vpc_id         = "vpc-7cbc4e05"
   dev_izybe_key_pair_label = "dev_ec2_key_pair"
