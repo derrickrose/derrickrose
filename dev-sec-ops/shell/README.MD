@@ -15,3 +15,12 @@ https://www.systemcodegeeks.com/shell-scripting/bash/writing-safer-bash-scripts/
 
 ### bash if else command
 https://www.systemcodegeeks.com/shell-scripting/bash/bash-else-example/
+
+bash shell scriptint and automation
+https://www.udemy.com/course/bash-shell-scripting/learn/lecture/6970026?src=sac&kw=bash#overview
+
+pratical bash on linux and mac
+https://www.udemy.com/course/practical-bash-scripting/learn/lecture/9014388?src=sac&kw=bash#overview
+
+bash shell scripting and programing
+https://www.udemy.com/course/mastering-bash-shell-scripting/learn/lecture/17326198?src=sac&kw=bash#overview
