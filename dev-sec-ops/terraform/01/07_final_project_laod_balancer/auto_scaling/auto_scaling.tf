@@ -10,7 +10,7 @@ data aws_ami "ubuntu_ami" {
 }
 
 locals {
-  ami_id   = data.aws_ami.ubuntu_ami.id
+  ami_id   = "ami-0c4f7023847b90238"
   max_size = 10
   min_size = 1
 }
@@ -46,7 +46,7 @@ resource "aws_autoscaling_group" "autoscaling_group" {
   vpc_zone_identifier  = [module.shared_vars.public_subnet_id_a]
   target_group_arns    = [var.target_group_arn]
   tag {
-    key                 = "name"
+    key                 = "Name"
     value               = "${module.shared_vars.env}-${module.shared_vars.domain}-${module.shared_vars.project}-asg"
     propagate_at_launch = true
   }

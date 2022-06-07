@@ -18,7 +18,7 @@ data aws_ami "ubuntu_ami" {
 }
 
 locals {
-  ami_id   = "ami-0d70a59d7191a8079"
+  ami_id   = "ami-0c4f7023847b90238"
   max_size = 10
   min_size = 1
 }
@@ -27,12 +27,8 @@ locals {
 locals {
   env = "${terraform.workspace}"
 
-  amiid_env = {
-    default    = "ami-0b59bfac6be064b78"
-    staging    = "ami-0b59bfac6be064b78"
-    production = "ami-0b59bfac6be064b78"
-  }
-  amiid     = data.aws_ami.ubuntu_ami.id
+
+  amiid     = "ami-0c4f7023847b90238"
 
   instancetype_env = {
     default    = "t2.micro"
