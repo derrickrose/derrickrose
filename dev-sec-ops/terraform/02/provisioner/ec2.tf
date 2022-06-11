@@ -53,17 +53,22 @@ resource "aws_instance" "instance_ec2" {
     destination = "/tmp/index.html"
   }
 
+
+}
+
+resource "null_resource" "install_http_server" {
   provisioner "remote-exec" {
     connection {
       type        = "ssh"
       user        = "ec2-user"
       password    = ""
-      host        = self.public_ip
+      host        = aws_eip.ec2_eip.public_ip #may be to change with the attached ip_adress ?
       private_key = local.key
     }
 
 
     inline = [
+      "echo ${aws_eip.ec2_eip.public_ip} >> public_ip.txt",
       "echo toto titi tata >> a.txt",
       "sudo yum update -y",
       "sudo yum install -y httpd",
