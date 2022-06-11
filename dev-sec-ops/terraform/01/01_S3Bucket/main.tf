@@ -15,7 +15,7 @@ resource "aws_s3_bucket" "dev_izybe_bucket" {
 resource "aws_s3_bucket_acl" "dev_izybe_bucket_acl" {
   bucket     = aws_s3_bucket.dev_izybe_bucket.id
   depends_on = [aws_s3_bucket.dev_izybe_bucket]
-  acl = "private"
+  acl = "private" #public-read
 
 }
 
