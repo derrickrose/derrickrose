@@ -1,1 +1,2 @@
-https://www.udemy.com/course/devops-training/learn/lecture/9744342?src=sac&kw=terraform#overview
+terraform jenkins kubernetes ansible
+https://www.udemy.com/course/devops-training/learn/lecture/27853762?src=sac&kw=kubernetes#overview

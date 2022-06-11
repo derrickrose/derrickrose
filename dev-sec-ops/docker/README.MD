@@ -25,9 +25,6 @@ https://www.udemy.com/course/amazon-eks-starter-kubernetes-on-aws/learn/lecture/
 kubernetes in hard way CKA
 https://www.udemy.com/course/kubernetes-training/learn/lecture/17450152?src=sac&kw=kubernetes#overview
 
-terraform jenkins kubernetes ansible
-https://www.udemy.com/course/devops-training/learn/lecture/27853762?src=sac&kw=kubernetes#overview
-
 kubernetes for developers
 https://www.udemy.com/course/kubernetes-for-developers/learn/lecture/15098840?src=sac&kw=kubernetes#overview
 
