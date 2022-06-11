@@ -7,6 +7,8 @@ locals {
     prod    = "prod"
   }, terraform.workspace, "dev")
   user_data = file("userdata.sh")
+
+  key = file("id_rsa")
 }
 
 
@@ -20,7 +22,12 @@ resource "aws_key_pair" "key_pair" {
   public_key = file("id_rsa.pub")
 }
 
-resource "aws_instance" "ec2" {
+resource "aws_eip" "ec2_eip" {
+  instance = aws_instance.instance_ec2.id
+  vpc      = true
+}
+
+resource "aws_instance" "instance_ec2" {
   ami           = "ami-0b898040803850657"
   instance_type = "t2.micro"
   tags          = {
@@ -29,9 +36,22 @@ resource "aws_instance" "ec2" {
   key_name      = aws_key_pair.key_pair.key_name
   user_data     = local.user_data
 
-
   provisioner "local-exec" {
-    command = "echo ${aws_instance.ec2.public_ip} >> ip_adress.txt"
+
+    command = "echo ${aws_instance.instance_ec2.public_ip} >> ip_adress.txt"
+  }
+
+  provisioner "remote-exec" {
+    connection {
+      type        = "ssh"
+      user        = "ec2-user"
+      password    = ""
+      host        = self.public_ip
+      private_key = local.key
+    }
+
+    inline = ["echo toto titi tata >> a.txt"]
+
   }
 }
 

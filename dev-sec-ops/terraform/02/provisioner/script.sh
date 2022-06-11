@@ -1,0 +1,1 @@
+echo "this is a text" >> txt.txt
