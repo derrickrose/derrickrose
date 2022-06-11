@@ -41,6 +41,18 @@ resource "aws_instance" "instance_ec2" {
     command = "echo ${aws_instance.instance_ec2.public_ip} >> ip_adress.txt"
   }
 
+  provisioner "file" {
+    connection {
+      type        = "ssh"
+      user        = "ec2-user"
+      password    = ""
+      host        = self.public_ip
+      private_key = local.key
+    }
+    source      = "index.html"
+    destination = "/tmp/index.html"
+  }
+
   provisioner "remote-exec" {
     connection {
       type        = "ssh"
@@ -50,7 +62,17 @@ resource "aws_instance" "instance_ec2" {
       private_key = local.key
     }
 
-    inline = ["echo toto titi tata >> a.txt"]
+
+    inline = [
+      "echo toto titi tata >> a.txt",
+      "sudo yum update -y",
+      "sudo yum install -y httpd",
+      "sudo systemctl start httpd.service",
+      "sudo systemctl enable httpd.service",
+      "sudo cp /tmp/index.html /var/www/html/index.html"
+
+
+    ]
 
   }
 }
