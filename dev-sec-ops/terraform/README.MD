@@ -9,3 +9,7 @@ https://www.terraform-best-practices.com/
 # test
 https://github.com/aelsabbahy/goss
 https://blog.octo.com/tester-son-code-dinfrastructure-avec-terratest/
+
+
+note that we can skip the prompt to validate with yes 
+`terraform apply --auto-approve`
