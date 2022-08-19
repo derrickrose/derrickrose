@@ -17,27 +17,27 @@ import sys
 #
 
 
-def climbingLeaderboard(ranked, player):
-    current_ranking = 0
-    previous_rank_score = -1
-    play_index = len(player) - 1
-    for rank in range(len(ranked)):
-        current_rank_score = ranked[rank]
+def climbingLeaderboard(ranked: list[int], player: list[int]):
+    current_ranking: int = 0
+    previous_rank_score: int = -1
+    reversed_play_index: int = len(player) - 1
+    for score in range(len(ranked)):
+        current_rank_score: int = ranked[score]
         if current_rank_score != previous_rank_score:
             current_ranking += 1
         previous_rank_score = current_rank_score
-        play_score = player[play_index]
+        play_score: int = player[reversed_play_index]
         if play_score >= current_rank_score:
-            for play in reversed(range(play_index + 1)):
+            for play in reversed(range(reversed_play_index + 1)):
                 play_score = player[play]
                 if play_score >= current_rank_score:
                     player[play] = current_ranking
-                    play_index -= 1
+                    reversed_play_index -= 1
                 else:
                     break
     current_ranking += 1
-    if play_index >= 0:
-        for play in reversed(range(play_index + 1)):
+    if reversed_play_index >= 0:
+        for play in reversed(range(reversed_play_index + 1)):
             player[play] = current_ranking
     return player
 
