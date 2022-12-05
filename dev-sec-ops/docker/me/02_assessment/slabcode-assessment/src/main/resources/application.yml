@@ -29,7 +29,7 @@ ProjectsController:
   get: Gets specific project by its id.
   search: Returns specific project by projectname.
   task:
-    on-going: Lists all on-going (not done) tasks by a project id.
+    on-going: Lists me on-going (not done) tasks by a project id.
   update: Updates specific project by its id.
   status:
     update: Updates project's status.
