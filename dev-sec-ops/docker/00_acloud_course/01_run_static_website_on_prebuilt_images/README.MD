@@ -8,7 +8,7 @@
 * list all images on local :
   `docker images`
 
-## Running an image
+### Running an image
 
 * run image http with the command (port 8080 of the host -> port 80 of the container) :
   `docker run --name  httpd -d -p 8080:80 httpd:2.4`
