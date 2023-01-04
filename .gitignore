@@ -1,3 +1,4 @@
+*.class
 *.info
 .idea
 *.gz
@@ -14,3 +15,8 @@
 *.backup
 *.pub
 id_rsa
+#######################
+*.jar
+target/
+classes/
+*.timestamp
