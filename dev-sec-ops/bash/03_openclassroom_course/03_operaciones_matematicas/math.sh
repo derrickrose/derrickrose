@@ -6,6 +6,8 @@ let "c=a+b"
 
 
 echo "el valor de c es : $c"
+d=$((c+c))
+echo "el valor de d es : $d"
 
 
 

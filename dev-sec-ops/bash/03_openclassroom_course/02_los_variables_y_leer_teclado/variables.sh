@@ -1,6 +1,6 @@
 #!/bin/bash
 
-#script para mostrar un variable con shell
+#script para mostrar un variable con bash
 
 message='Bonjour tout le monde'
 echo $message
