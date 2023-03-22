@@ -4,7 +4,7 @@
 
 message="bonjour tout le monde"
 # to uppercase with ^^
-echo "${message^^}"
+echo "${message^^}" 
 toto="${message^^}"
 
 # to lowercase with ,,
