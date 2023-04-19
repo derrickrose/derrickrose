@@ -23,7 +23,7 @@ On a running container we copy our web pages inside
 * copy project files to the htdocs directory
   `cp -r /temp/web-static/web/* /usr/local/apache2/htdocs/`
 * preparing to send the new created image
-  Notice that the option -f on docker ps is to filter the containers by name
+  Notice that the option -f on docker ps is to filter the containers with any param (here we do filter by its name)
   `docker commit $(docker ps -f name=httpd -aq) randofrils/web-factory:v1`
   `docker commit CONTAINER_ID randofrils/web-factory:v1`
 * send the new images :
