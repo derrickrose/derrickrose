@@ -46,4 +46,4 @@ then removing installed git
   `docker images`
   We have now a more light image
 * to push :
-  `git push randofrils/web-factory:v2`
+  `docker push randofrils/web-factory:v2`
