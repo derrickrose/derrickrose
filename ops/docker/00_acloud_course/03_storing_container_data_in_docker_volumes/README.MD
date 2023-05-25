@@ -34,7 +34,7 @@ To avoid that, we put data into a volume which will be shared between containers
 
 ==> /var/lib/docker/volumes/website/_data
 
-### lab 3 : use the website volume
+### lab 3 : use the website docker volume
 
 * copy files to the volume :
   `sudo cp -r ./ops/docker/00_acloud_course/03_storing_container_data_in_docker_volumes/web/* /var/lib/docker/volumes/website/_data`
