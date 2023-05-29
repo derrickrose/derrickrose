@@ -9,5 +9,9 @@
 * to check the layers in the image :
   `docker inspect -f '{{ range .RootFS.Layers }}{{ println . }}{{ end }}' website:1`
 * to run the container :
-  `docker run -d -p 80:80 website:1`
+  `docker run -d -p 80:80 --name web website:1`
+* to list running container :
+  `docker container ls`
+* to stop and remove container :
+  `docker stop web && docker rm web`
     
