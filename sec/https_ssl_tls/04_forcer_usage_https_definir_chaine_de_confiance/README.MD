@@ -44,7 +44,7 @@ taper 3 et 2 fois sur bouton d pour supprimer 3
 * * probleme de notre certificat c'est autosigné (nous meme qui a créé mais personne a validé) n'importe qui peut prétendre etre google ou ...
 * * navigateur par defaut ne fait jamais confiance à un certif autosigné
 * * pour remedier, demander à une autorité certifiante de valider notre certificat
-* * tout comme notre CIN, un certificat ssl contient signature emetteur (certificate issuer)
+## tout comme notre CIN, un certificat ssl contient signature emetteur (certificate issuer)
 * * il s'agit d'un autre cert ssl qui se sert de sa clée privée pour contre signer notre certificat
 * * cette signature est facilement vérifié en utilisant la clée public du certificat emetteur 
 * * il s'agit de faire confiance à l'emetteur du certificat pour automatiquement valider tous les certif que cette emetteur a contre signer
@@ -65,3 +65,8 @@ navigateur utilise alors clé publique de cet certif intermediaire pour valider 
 navigateur cherche a savoir si on fait confiance à ce cetificat intermediaire => NON
 navigateur cherche certificat qui a emis le certificat intermediaire (le plus souvent root CA)
 navigateur utilise clée public du certif racine pour valider signature certif intermediaire
+
+## ou trouver les certificats
+* linux /etc/ssl/certs
+* windows barre de recherche avec mot clé cert
+* mac application  > utilitaires > (trousseau d'acces ou keychain access)
