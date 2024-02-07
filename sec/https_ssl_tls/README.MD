@@ -41,3 +41,8 @@ problème cryptographie à clé asymetrhique ==> performance, d'ou la création 
 
 
 cf :  https://www.linkedin.com/learning/securiser-son-site-avec-un-certificat-ssl/bienvenue-dans-securiser-son-site-avec-un-certificat-ssl?resume=false
+
+exemple de site fournisseur de certificat :
+
+https://www.eurodns.com/
+
