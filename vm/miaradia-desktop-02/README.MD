@@ -20,6 +20,11 @@ sudo apt install net-tools
 
 ```sudo apt install curl```
 
+### installation openssh-server
+
+```sudo apt install openssh-server```
+
+
 ### tools :
 
 * nginx
