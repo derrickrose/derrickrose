@@ -88,3 +88,4 @@ server {
 * pour utiliser une autorité certifiance aller voir le chapitre 05
 * la plus grande différence entre apache et nginx est que nginx ne considère pas les certificats intermediaire,
   de ce fait on ajoute la valeur dans le certificat du site mais de préférence en debut du fichier (public crt ou cert)
+
