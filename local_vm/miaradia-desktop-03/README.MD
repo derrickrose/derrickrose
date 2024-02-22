@@ -23,4 +23,4 @@ sudo apt install net-tools
 ### network :
 
 * adapter 1 : bridge (accessible via host and have internet access)
-    * IP :  192.168.1.33
+    * IP :  192.168.1.59
