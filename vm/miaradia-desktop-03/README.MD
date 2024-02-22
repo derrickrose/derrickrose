@@ -8,14 +8,6 @@ sudo apt install net-tools
 
 ``` sudo apt install vim ```
 
-### installation openssl
-
-```sudo apt install openssl```
-
-### installation nginx
-
-```sudo apt install nginx```
-
 ### installation curl
 
 ```sudo apt install curl```
@@ -24,13 +16,9 @@ sudo apt install net-tools
 
 ```sudo apt install openssh-server```
 
-### installation certbot
-
-```sudo apt install python3-certbot-nginx```
-
 ### tools :
 
-* nginx
+* jenkins
 
 ### network :
 
