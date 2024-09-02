@@ -2,7 +2,8 @@
 
 # Basic to advanced linux commands
 
-ls, mkdir, touch, rm, date
+ls, mkdir, touch, rm, date, pwd, cd, ls, rmdir
+cp, mv cut, 
 
 # Advanced linux commands
 
