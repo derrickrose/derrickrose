@@ -1,7 +1,8 @@
-
 # Linux administration
 
 # Basic to advanced linux commands
+
+ls, mkdir, touch, rm, date
 
 # Advanced linux commands
 
