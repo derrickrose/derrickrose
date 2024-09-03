@@ -43,6 +43,19 @@ ls
 mv test_file_copy test_file
 ls # there should be only one file left
 
+# count number of lines, words or characters in a file
+echo word_count
+wc -m test_file
+
+# show texts that fits on the screen current screen size, but can scroll down
+# less test_file
+
+# show the latest 5 lines of a file
+tail test_file
+
+# print first 5 lines of a file
+head test_file
+
 # delete a file
 rm test_file
 
@@ -55,8 +68,9 @@ rmdir test_baba
 # cut subsequence of words from a text , start from index 1
 echo "baba bobo baba" | cut -c 6-10
 
-
-
+# stop non responding process
+# kill
+# might use top to check running activities process id
 
 
 
