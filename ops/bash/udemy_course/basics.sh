@@ -70,7 +70,7 @@ echo "baba bobo baba" | cut -c 6-10
 
 # stop non responding process
 # kill
-# might use top to check running activities process id
+# might use top os "ps aux" to check running activities process id
 
 
 
