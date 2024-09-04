@@ -1,3 +1,5 @@
+https://www.udemy.com/course/learn-shell-scripting-incl-awksedand-more-than-10-project/learn/lecture/40345590#learning-tools
+
 # Linux administration
 
 # Basic to advanced linux commands
