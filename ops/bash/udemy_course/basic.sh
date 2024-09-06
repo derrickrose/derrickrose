@@ -17,7 +17,7 @@ TAR=$(pwd) # only for commands
 echo $TAR
 
 #assign a variable from a file
-read HOSTNAME < /etc/hostname
+read HOSTNAME < /etc/hostname #will read just the first name
 echo $HOSTNAME
 
 #environment variable

@@ -24,8 +24,8 @@ touch baba.{txt,csv,pdf,xlsx} && ls
 chmod 777 baba.txt
 find . -name baba.pdf # the dot here is the starting point from where to search
 find . -type f -name baba.txt # to search for file and d to search for directory
-find . -type f -name "baba*"
-find . -type d -name "baba*"
+find . -type f -name "baba*" #file
+find . -type d -name "baba*" #directory
 find . -perm 777
 find . ! -perm 777 # not 777 permission file
 find . -user frils
