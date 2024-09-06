@@ -3,8 +3,8 @@
 # replacing WORLD by world
 VAR="HELLOworld"
 echo $VAR
-echo ${VAR/WoRLD/world}
-echo $VAR | tr "WORLD" "world"
+echo ${VAR/world/WORLD}
+echo $VAR | tr "world" "WORLD"
 
 # substring
 echo ${VAR:0:5} # substring start from 0 to 5 excluded
