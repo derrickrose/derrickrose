@@ -18,10 +18,14 @@ echo index of all elements ${!ARRAY[*]} #all indexes of array
 echo "-------------"
 declare -A VAR_ARRAY #to declare associate array
 VAR_ARRAY=(["Peter"]="un" ["John"]="deux" ["Toto"]="trois")
-echo ${VAR_ARRAY[@]}
-echo ${!VAR_ARRAY[@]}
+echo all values of the array ${VAR_ARRAY[@]}
+echo indices of the array ${!VAR_ARRAY[@]}
 VAR_ARRAY+=(["toys"]="cin")
 echo ${VAR_ARRAY[@]}
-echo ${#VAR_ARRAY[@]}
-unset VAR_ARRAY
+echo ${#VAR_ARRAY[@]} # length of the array
+unset VAR_ARRAY # empty the array
 echo $VAR_ARRAY
+
+#sub-array may refer to string
+arr=('zero' "one" "two" "three" "four" "five")
+echo print the first two param ${arr[@]:0:2}
