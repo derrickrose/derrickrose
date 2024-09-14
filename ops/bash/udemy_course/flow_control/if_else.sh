@@ -51,7 +51,7 @@ fi
 # if elif else and regex
 echo enter a number
 read VAR
-if [ $VAR -lt 0 ] 2> /dev/null
+if [ $VAR -lt 0 ] 2> /dev/null #redirect error to black hole since  the user could enter letter instead
 then echo "var is negatif"
 elif [ $VAR == 0 ] 2> /dev/null
 then echo "var is 0"
