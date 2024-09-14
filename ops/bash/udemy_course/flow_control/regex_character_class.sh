@@ -48,4 +48,22 @@ tare.otc@toto.fr  sdfsf
 FIN
 cat toto | grep -E [[:alnum:]]@[[:lower:]] | grep .com | cut -d" " -f1
 
+
+
+echo -n "[+] Enter the IP address : "
+read IP
+REGEX="[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[[:digit:]]{1,3}"
+if ! [[ $IP =~ $REGEX ]]
+then
+  echo "This is not an ip address : $IP"
+  exit 1
+else
+  echo "This is a valid IP address"
+fi
+
+IP_ADDRESS=${BASH_REMATCH[0]} #take the actual match and give value to the new variable
+ping -c 10 $IP_ADDRESS > toto
+cat toto
 rm -rf toto
+
+# another example of use is to match credit card
