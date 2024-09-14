@@ -15,24 +15,37 @@
 # [[:space:]] white space character same as \s
 
 #example of use
-echo -n "click on any digit "
-read VAR
-if [[ $VAR =~ [[:digit:]] ]]
-then
-  echo "you actually hit on a digit $VAR"
-else
-  echo "you did not hit on a digit"
-fi
+#echo -n "click on any digit "
+#read VAR
+#if [[ $VAR =~ [[:digit:]] ]]
+#then
+#  echo "you actually hit on a digit $VAR"
+#else
+#  echo "you did not hit on a digit"
+#fi
+#
+#cat << FIN > toto
+#shhsk shjjs h hsh lla   11
+#224 5894 5585 5555 jijis haoo jsio
+#884s hs  hshhj dkauii shh alsp aiis
+#ppii llm kkj kkkooo  iioo
+#ezc  hhj  kk  kcxv
+#mmmpppppkkkllllll
+#FIN
+#
+#cat toto | grep [[:xdigit:]]
 
-cat << FIN > toto
-shhsk shjjs h hsh lla   11
-224 5894 5585 5555 jijis haoo jsio
-884s hs  hshhj dkauii shh alsp aiis
-ppii llm kkj kkkooo  iioo
-ezc  hhj  kk  kcxv
-mmmpppppkkkllllll
+
+# example of use validation of email address with .com
+# example of use validation of ip address
+
+cat <<FIN > toto
+toto@hotmail.com tata
+tata@123.com sfsf
+baba@gmail.com sdfs
+nico@123.cx sdfs
+tare.otc@toto.fr  sdfsf
 FIN
-
-cat toto | grep [[:xdigit:]]
+cat toto | grep -E [[:alnum:]]@[[:lower:]] | grep .com | cut -d" " -f1
 
 rm -rf toto
