@@ -1,0 +1,38 @@
+#!/bin/bash
+
+# character classes
+# [[:digit:]] [0-9]
+# [[:lower:]] [a-z]
+# [[:upper:]] [A-Z]
+# [[:alpha:]] [a-zA-Z]
+# [[:alnum:]] [0-9a-zA-Z]
+# [[:xdigit]] [0-9a-fA-F] (base 16)
+# [[:cntrl]] control characters - first 32 ascii characters and 127th DEL
+# [[:punct:]] all the punctuation characters
+# [[:graph]] [[:alnum:]] and [[:punct:]]
+# [[:print:]] [[:alnum]] [[:punct:]] and space
+# [[:blank:]] space and tab
+# [[:space:]] white space character same as \s
+
+#example of use
+echo -n "click on any digit "
+read VAR
+if [[ $VAR =~ [[:digit:]] ]]
+then
+  echo "you actually hit on a digit $VAR"
+else
+  echo "you did not hit on a digit"
+fi
+
+cat << FIN > toto
+shhsk shjjs h hsh lla   11
+224 5894 5585 5555 jijis haoo jsio
+884s hs  hshhj dkauii shh alsp aiis
+ppii llm kkj kkkooo  iioo
+ezc  hhj  kk  kcxv
+mmmpppppkkkllllll
+FIN
+
+cat toto | grep [[:xdigit:]]
+
+rm -rf toto
