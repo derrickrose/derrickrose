@@ -15,7 +15,7 @@ ls *.txt | rm
 ls *.txt | xargs rm
 
 # list all users
-cat /etc/passwd | cut -d: -f1
+cat /etc/passwd | cut -d: -f1 # cut with option delimiter: and take the first value
 cut -d: -f1 < /etc/passwd #works only on files
 cat /etc/passwd | cut -d: -f1 | xargs #to have them in one line
 

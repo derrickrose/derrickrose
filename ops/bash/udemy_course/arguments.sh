@@ -9,10 +9,9 @@ echo $0
 
 # more on arguments
 echo $# number of arguments
-echo "$*" #all positional parameters # as a single world
-echo $@ all positional parameters # as separate string
-echo ${@:1:1} all positional parameters # as separate string
-
+echo "$*" all positional parameters as a single world
+echo $@ print all positional parameters as separate string
+echo ${@:1:1} print one positional parameter since start from one and print only one
 
 #special parameter
 echo ----------------------

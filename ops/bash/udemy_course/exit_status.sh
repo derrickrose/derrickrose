@@ -47,4 +47,4 @@ END
 # to check the previous exit status echo $?
 echo $?
 
-# exut status should be between 1 and 255
+# exit status should be between 1 and 255
