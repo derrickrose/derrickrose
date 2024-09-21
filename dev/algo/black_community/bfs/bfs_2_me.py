@@ -1,6 +1,5 @@
 # https://leetcode.com/problems/sliding-puzzle/description/
-
-
+import collections
 import copy
 
 
@@ -8,7 +7,7 @@ def build_board_id(board):
     values = []
     for row in board:
         for var in row:
-            values.append(var)
+            values.append(str(var))
     return "".join(values)
 
 
@@ -54,9 +53,39 @@ def get_possible_boards(board: list[list]) -> list[list[list]]:
     return boards
 
 
+def get_target_id(board: list[list]) -> str:
+    density = len(board) * len(board[0])
+    target_id = "".join([str(i) for i in range(1, density)])
+    return target_id + "0"
+
+
+def find_minimum_move(board: list[list]) -> int:
+    visited: set[str] = set()
+    to_visit = collections.deque()
+    to_visit.append((board, 0))
+    target_board_id = get_target_id(board)
+
+    while to_visit:
+        current_board, number = to_visit.popleft()
+        current_board_id = build_board_id(current_board)
+        visited.add(current_board_id)
+
+        if current_board_id == target_board_id:
+            return number
+
+        for next_board in get_possible_boards(current_board):
+            board_id = build_board_id(next_board)
+            if board_id not in visited:
+                to_visit.append((copy.deepcopy(next_board), number + 1))
+    # wher the resolution is impossible
+    return -1
+
+
 if __name__ == '__main__':
     # 1 | 2 | 3
     # 4 | 0 | 5
     starting_board = [[1, 2, 3], [4, 0, 5]]
     target_board = [[1, 2, 3], [4, 5, 0]]
     print(get_possible_boards(starting_board))
+    print(find_minimum_move(starting_board))
+    print(get_target_id(starting_board))
