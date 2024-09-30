@@ -20,4 +20,11 @@ touch a.sh
 sleep 10
 rm @(a|b*)!(.md) # will delete all file starting with a or b but not ending with md
 rm a.md
+
+touch {a..z}.sh
+rm {a..z}.sh
+
+
+
+
 #
