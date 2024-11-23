@@ -1,9 +1,0 @@
-CREATE TABLE nom_table (
-    colonne1 INT NOT NULL,
-    colonne2 VARCHAR(40),
-    colonne3 TEXT,
-    CONSTRAINT [symbole_contrainte] UNIQUE [INDEX] ind_uni_col2 (colonne2)
-);
-
-ALTER TABLE nom_table
-ADD CONSTRAINT [symbole_contrainte] UNIQUE ind_uni_col2 (colonne2);

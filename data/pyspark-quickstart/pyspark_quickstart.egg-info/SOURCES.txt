@@ -1,9 +1,0 @@
-README.rst
-setup.py
-pyspark_quickstart/__init__.py
-pyspark_quickstart/initial_conf.py
-pyspark_quickstart/program_from_oracle_to_s3.py
-pyspark_quickstart.egg-info/PKG-INFO
-pyspark_quickstart.egg-info/SOURCES.txt
-pyspark_quickstart.egg-info/dependency_links.txt
-pyspark_quickstart.egg-info/top_level.txt

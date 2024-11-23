@@ -1,1 +1,0 @@
-https://openclassrooms.com/fr/courses/1959476-administrez-vos-bases-de-donnees-avec-mysql
