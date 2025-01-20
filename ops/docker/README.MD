@@ -34,3 +34,5 @@ https://www.udemy.com/course/la_plateforme_k8s/learn/lecture/17488752?src=sac&kw
 Just enough kubernetes to be dangerous
 https://www.udemy.com/course/just-enough-kubernetes/learn/lecture/11858548#overview
 
+Tools optimize images 
+dive, slim 
